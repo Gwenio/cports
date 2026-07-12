@@ -1,5 +1,5 @@
 pkgname = "qpdf"
-pkgver = "12.2.0"
+pkgver = "12.3.2"
 pkgrel = 0
 build_style = "cmake"
 configure_args = [
@@ -22,7 +22,7 @@ pkgdesc = "Command-line tool and C++ library for PDF files"
 license = "Apache-2.0"
 url = "https://github.com/qpdf/qpdf"
 source = f"{url}/releases/download/v{pkgver}/qpdf-{pkgver}.tar.gz"
-sha256 = "b3d1575b2218badc3549d6977524bb0f8c468c6528eebc8967bbe3078cf2cace"
+sha256 = "6cba2f9f2cd887d905faeb99e0e51a307b217920d1bbf3e9cfbb2e8178a2deda"
 # for some reason some tests have an empty output for diff
 options = ["!check"]
 
