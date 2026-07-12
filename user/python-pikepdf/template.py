@@ -1,5 +1,5 @@
 pkgname = "python-pikepdf"
-pkgver = "10.5.0"
+pkgver = "10.10.0"
 pkgrel = 0
 build_style = "python_pep517"
 hostmakedepends = [
@@ -9,13 +9,17 @@ hostmakedepends = [
     "python-setuptools",
 ]
 makedepends = [
+    "ninja",
     "python-devel",
+    "python-nanobind-devel",
+    "python-scikit_build_core",
     "qpdf-devel",
 ]
-depends = ["python-pillow"]
+depends = ["python-pillow", "python-lxml"]
 checkdepends = [
     "python-hypothesis",
-    "python-lxml",
+    "python-numpy",
+    "python-psutil",
     "python-pytest",
     "python-pytest-xdist",
     *depends,
@@ -26,4 +30,4 @@ url = "https://github.com/pikepdf/pikepdf"
 source = (
     f"https://github.com/pikepdf/pikepdf/archive/refs/tags/v{pkgver}.tar.gz"
 )
-sha256 = "57658af585a720daa6cac9baeb6b1677e051e3a6dfc76ca4a5c08e580f7a9edf"
+sha256 = "57c83d6f5fce11ed852a20d1ca33c3a651dd45ab0e893d65b18a3a1620f6c010"
