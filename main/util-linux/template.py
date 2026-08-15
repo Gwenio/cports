@@ -1,6 +1,6 @@
 pkgname = "util-linux"
-pkgver = "2.40.4"
-pkgrel = 1
+pkgver = "2.42.2"
+pkgrel = 0
 build_style = "meson"
 configure_args = [
     "--auto-feature=enabled",
@@ -13,17 +13,21 @@ configure_args = [
     "-Dlibuser=disabled",
     "-Dlibutempter=disabled",
     "-Dreadline=disabled",
+    "-Dtranslate-docs=disabled",
     "-Dbuild-plymouth-support=disabled",
     "-Dfs-search-path-extra=/usr/sbin:/usr/bin",
     "-Dbuild-agetty=disabled",
     "-Dbuild-cal=disabled",
+    "-Dbuild-col=disabled",
     "-Dbuild-fallocate=disabled",
+    "-Dbuild-getino=disabled",
     "-Dbuild-kill=disabled",
     "-Dbuild-liblastlog2=disabled",
     "-Dbuild-logger=disabled",
     "-Dbuild-login=disabled",
     "-Dbuild-mesg=disabled",
     "-Dbuild-more=disabled",
+    "-Dbuild-waitpid=disabled",
     "-Dbuild-chfn-chsh=disabled",
     "-Dbuild-nologin=disabled",
     "-Dbuild-newgrp=disabled",
@@ -66,7 +70,7 @@ url = "https://www.kernel.org/pub/linux/utils/util-linux"
 source = (
     f"$(KERNEL_SITE)/utils/util-linux/v{pkgver[:-2]}/util-linux-{pkgver}.tar.xz"
 )
-sha256 = "5c1daf733b04e9859afdc3bd87cc481180ee0f88b5c0946b16fdec931975fb79"
+sha256 = "03a05d3adf9602ef128f2da05b84b3205ce60c351e5737c0370f74000679ce8a"
 tool_flags = {"CFLAGS": ["-D_DIRENT_HAVE_D_TYPE"]}
 # checkdepends are missing
 options = ["!check"]

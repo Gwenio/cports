@@ -1,9 +1,9 @@
 --- a/meson.build
 +++ b/meson.build
-@@ -1070,7 +1070,6 @@ exe = executable(
+@@ -1384,7 +1384,6 @@
  if opt and not is_disabler(exe)
    exes += exe
-   manadocs += ['login-utils/runuser.1.adoc']
+   manadocs += runuser_manadocs
 -  bashcompletionslinks += {'runuser': 'su'}
  endif
  

@@ -8,18 +8,16 @@ diff --git a/meson.build b/meson.build
 index d7e5352..205db27 100644
 --- a/meson.build
 +++ b/meson.build
-@@ -3345,33 +3345,9 @@ if build_libuuid
-   }
+@@ -4385,31 +4384,9 @@
  endif
  
--asciidoctor = find_program('asciidoctor', required : false)
+ asciidoctor = find_program('asciidoctor', required : false)
 -if asciidoctor.found()
 +if true
    foreach adoc : manadocs
--    name = adoc.split('/')[-1]
--    page = name.split('.adoc')[0]
+-    page = fs.stem(adoc)
 -    section = page.split('.')[-1]
--    mandirn = join_paths(mandir, 'man' + section)
+-    mandirn = mandir / 'man' + section
 -    input = adoc
 -
 -    custom_target(
@@ -40,7 +38,7 @@ index d7e5352..205db27 100644
 -      depfile : page + '.deps',
 -      install: true,
 -      install_dir : mandirn)
-+    install_man(adoc.split('.adoc')[0])
++    install_man(fs.parent(adoc) / fs.stem(adoc))
    endforeach
  
    foreach link_name, target : manlinks
